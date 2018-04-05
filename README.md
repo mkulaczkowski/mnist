@@ -10,7 +10,7 @@ This is a demo to show you how to run a handwritten digit recognition model on [
 
 
 
-Follow the instructions below to run the model on Clusterone using the `just` command line tool. This project is part of Clusterone's [Getting Started guide](https://docs.clusterone.com/docs/get-started). There is also an [in-depth tutorial](https://docs.clusterone.com/v1.0/docs/mnist-with-clusterone) based on this repository.
+Follow the instructions below to run the model on Clusterone using the `just` command line tool. This project is part of Clusterone's [Getting Started guide](https://docs.clusterone.com/docs/get-started). There is also an [in-depth tutorial](https://docs.clusterone.com/docs/mnist-with-clusterone) based on this repository.
 
 ## Table of Contents
 
@@ -33,7 +33,7 @@ To run this project on the Clusterone platform, you need:
 Start out by cloning this repository onto your local machine. 
 
 ```shell
-$ git clone https://github.com/clusterone/mnist
+git clone https://github.com/clusterone/mnist
 ```
 
 Now you're all set to run MNIST on Clusterone!
@@ -47,34 +47,33 @@ cd into the folder you just downloaded with `cd mnist`  and log into your Cluste
 First, create a new project on Clusterone:
 
 ```shell
-$ just init project mnist
+just init project mnist
 ```
 
 Then, upload the code to the new project:
 
 ```shell
-$ git push clusterone master
+git push clusterone master
 ```
 
 Finally, create a job. Make sure to replace `YOUR_USERNAME` with your username.
 
 ```shell
-$ just create job distributed --project YOUR_USERNAME/mnist --module mnist --name first-job \
---python-version 3 --framework tensorflow-1.3.0 --worker-type t2.small \
---ps-type t2.small --time-limit 1h
+just create job distributed --project YOUR_USERNAME/mnist --module mnist --name first-job \
+--time-limit 1h
 ```
 
 Now all that's left to do is starting the job:
 
 ```shell
-$ just start job -p mnist/first-job
+just start job -p mnist/first-job
 ```
 
-That's it! You can monitor its progress on the command line using `just pulse`. More elaborate monitoring is available on the [Matrix](https://clusterone.com/matrix), Clusterone's graphical web interface.
+That's it! You can monitor its progress on the command line using `just get events`. More elaborate monitoring is available on the [Matrix](https://clusterone.com/matrix), Clusterone's graphical web interface.
 
 ## More Info
 
-For further information on this example, take a look at the tutorial based on this repository in the [Clusterone Documentation](https://docs.clusterone.com/v1.0/docs/mnist-with-clusterone).
+For further information on this example, take a look at the tutorial based on this repository in the [Clusterone Documentation](https://docs.clusterone.com/docs/mnist-with-clusterone).
 
 For further info on the MNIST dataset, check out [Yann LeCun's page](http://yann.lecun.com/exdb/mnist/) about it. To learn more about TensorFlow and Deep Learning in general, take a look at the [TensorFlow](https://tensorflow.org) website.
 
