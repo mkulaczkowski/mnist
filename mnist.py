@@ -4,8 +4,8 @@ import math
 import os
 
 import tensorflow as tf
+import clusterone
 from clusterone import get_data_path, get_logs_path
-from clusterone.version import VERSION
 
 from tensorflow.examples.tutorials.mnist import mnist
 from tensorflow.contrib.learn.python.learn.datasets.mnist import read_data_sets
@@ -30,7 +30,7 @@ for param in os.environ.keys():
     print("%s: %s " % (param, os.environ[param]))
 
 try:
-    print("Clusterne CLI Version: %s" % VERSION)
+    print("Clusterne CLI Version: %s" % clusterone.__version)
 except Exception as e:
     print('Cannot get CLI version')
 
