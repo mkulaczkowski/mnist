@@ -124,10 +124,10 @@ def main(unused_argv):
     if FLAGS.data_dir is None or FLAGS.data_dir == "":
         raise ValueError("Must specify an explicit `data_dir`")
 
-    tf.Print('Printing Flags')
-    tf.Print(str(FLAGS))
+    print('Printing Flags')
+    print(str(FLAGS))
 
-    tf.Print(FLAGS.__flags)
+    print(FLAGS.__flags)
     device, target = device_and_target()
     with tf.device(device):
         images = tf.placeholder(tf.float32, [None, 784], name='image_input')
